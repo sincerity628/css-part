@@ -8,7 +8,7 @@
 - :x: Some Tricks: [detail]()
 - :x: Flexbox: [detail]()
 - :x: Grid Layout: [detail]()
-- :o: Sass: [detail]()
+- :o: Sass: [detail](https://github.com/sincerity628/css-part/tree/master/learn-sass)
 - :x: Position: [detail]()
 - :x: Pseudo Elements: [detail]()
 - :x: Units rem & em: [detail]()
