@@ -1,0 +1,24 @@
+%btn {
+  display: inline-block;
+  margin: 3px;
+  padding: 8px 20px;
+  border-radius: 5px;
+
+  &:hover {
+    transform: scale(.98);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.primary-btn {
+  @extend %btn;
+  background-color: lighten($primary-color, 10%);
+}
+
+.secondary-btn {
+  @extend %btn;
+  background-color: $secondary-color;
+}
