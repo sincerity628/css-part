@@ -15,10 +15,10 @@
 
 .primary-btn {
   @extend %btn;
-  background-color: lighten($primary-color, 10%);
+  @include set-background(lighten($primary-color, 10%));
 }
 
 .secondary-btn {
   @extend %btn;
-  background-color: $secondary-color;
+  @include set-background($secondary-color);
 }

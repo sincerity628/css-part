@@ -1,0 +1,37 @@
+.container {
+  max-width: 1100px;
+  padding: 0 30px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+// the margin & padding classes like in bootstrap!
+$spaceamounts: (1, 2, 3, 4, 5); // a number list
+// each loop
+@each $space in $spaceamounts {
+  // margin all around
+  .ma-#{$space} {
+    margin: #{$space}em;
+  }
+  // margin top & bottom
+  .my-#{$space} {
+    margin: #{$space}em 0;
+  }
+  // margin left & right
+  .mx-#{$space} {
+    margin: 0 #{$space}em;
+  }
+
+  // padding all around
+  .pa-#{$space} {
+    padding: #{$space}em;
+  }
+  // padding top & bottom
+  .py-#{$space} {
+    padding: #{$space}em 0;
+  }
+  // padding left & right
+  .px-#{$space} {
+    padding: 0 #{$space}em;
+  }
+}
