@@ -9,7 +9,9 @@ const progressBar = document.getElementById('progress-bar');
 
 // color
 const primaryColor = '#527318';
+const progressColor = '#7ea33c';
 const errorColor = '#8b1b17';
+const errorProgressColor = '#e6433d';
 
 // the questions
 const questions = [
@@ -58,28 +60,12 @@ function showQuestion() {
 function hideQuestion() {
   inputGroup.style.opacity = 0;
   inputProgress.style.width = 0;
-}
-
-// show next question
-function showNext() {
-  questionIndex++;
-  // check if it is the last question
-  if(questionIndex === questions.length) {
-    endInput();
-    return;
-  }
-
-  showQuestion();
+  inputProgress.style.transition = 'none';
 }
 
 // make the form shake
 function shake(x, y) {
   formBox.style.transform = `translate(${x}px, ${y}px)`;
-}
-
-// finished the input progress
-function finishInput() {
-  console.log('finish');
 }
 
 // check if the value inside the input is valid
@@ -96,6 +82,8 @@ function validate() {
 function inputFail() {
   // set the error class
   formBox.classList.add('error');
+  // set the progress bar color
+  progressBar.style.backgroundColor = errorProgressColor;
   // set the background color into error color
   document.body.style.backgroundColor = errorColor;
   // get the form box shake
@@ -109,16 +97,22 @@ function inputFail() {
 function inputPass() {
   // remove the error class
   formBox.classList.remove('error');
+  // set the progress bar color
+  progressBar.style.backgroundColor = progressColor;
   // set background color to the original
   document.body.style.backgroundColor = primaryColor;
-  // clear the input value
-  inputField.value = '';
+  // store the value in the questions array
+  questions[questionIndex].answer = inputField.value;
 
-  // hide the questions
-  hideQuestion();
+  // move to the next question
+  questionIndex++;
 
-  // show next question
-  showNext();
+  if(questions[questionIndex]) {
+    hideQuestion();
+    getQuestion();
+  } else {
+    console.log('finished');
+  }
 }
 
 // event listeners
