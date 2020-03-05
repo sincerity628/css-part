@@ -8,6 +8,7 @@
 
 body {
   background-color: $primary-color;
+  transition: background-color 0.1s ease-in-out;
   font-family: 'Roboto', sans-serif;
   margin: 0;
 }
@@ -135,10 +136,14 @@ h1.logo {
 .error {
   #next-btn {
     color: $error-color;
+
+    &:hover {
+      color: lighten($error-color, 10%);
+    }
   }
 
   #input-progress {
-    color: $error-color;
+    border-bottom: 3px solid $error-color;
   }
 }
 
