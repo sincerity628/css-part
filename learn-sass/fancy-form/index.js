@@ -90,8 +90,8 @@ function validate() {
   }
 }
 
-// end the input process
-function endInput() {
+// hide everything from the DOM
+function hideEverything() {
   // hide the progress bar
   progressBar.style.display = 'none';
 
@@ -105,6 +105,12 @@ function endInput() {
   // hide the whole form box
   formBox.style.transition = 'width 0.6s ease-in-out';
   formBox.style.width = '0';
+}
+
+// end the input process
+function endInput() {
+  // hide everything from the DOM
+  hideEverything();
 
   setTimeout(showResult, switchTime)
 }
@@ -129,6 +135,7 @@ function inputFail() {
   progressBar.style.backgroundColor = errorProgressColor;
   // set the background color into error color
   document.body.style.backgroundColor = errorColor;
+  
   // get the form box shake
   for(let i = 0; i < 6; i++) {
     setTimeout(shake, shakeTime * i, ((i % 2) * 2 - 1) * 20, 0);

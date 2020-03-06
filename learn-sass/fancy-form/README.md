@@ -2,7 +2,7 @@
 
 #### Progress:
 - :white_check_mark: html & css part
-- :negative_squared_cross_mark: javascript part
+- :white_check_mark: javascript part
 
 #### :eyes: The Project Demo: [demo](https://sincerity628.github.io/css-part/learn-sass/fancy-form/)
 
