@@ -63,6 +63,18 @@ function hideQuestion() {
   inputProgress.style.transition = 'none';
 }
 
+// show the previous question
+function prevQuestion() {
+  // move to the previous question
+  questionIndex --;
+
+  // hide the current question
+  hideQuestion();
+
+  // show the question
+  getQuestion();
+}
+
 // make the form shake
 function shake(x, y) {
   formBox.style.transform = `translate(${x}px, ${y}px)`;
@@ -154,3 +166,4 @@ function inputPass() {
 document.addEventListener('DOMContentLoaded', getQuestion);
 
 nextBtn.addEventListener('click', validate);
+prevBtn.addEventListener('click', prevQuestion);
