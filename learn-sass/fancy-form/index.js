@@ -65,6 +65,9 @@ function hideQuestion() {
 
 // show the previous question
 function prevQuestion() {
+  if(questionIndex === 0) {
+    return;
+  }
   // move to the previous question
   questionIndex --;
 
