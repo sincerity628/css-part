@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap');
 
 @import 'config';
 
@@ -144,6 +144,11 @@ h1.logo {
   #input-progress {
     border-bottom: 3px solid $error-color;
   }
+}
+
+.result {
+  color: #fff;
+  font-size: 30px;
 }
 
 @import 'mobile';

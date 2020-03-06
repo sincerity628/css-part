@@ -23,8 +23,8 @@ const questions = [
 
 // the input box shake time
 const shakeTime = 100;
-// transition between 2 questions
-const switchTime = 300;
+// transition before the result
+const switchTime = 600;
 
 // the problem start index
 let questionIndex = 0;
@@ -78,6 +78,37 @@ function validate() {
   }
 }
 
+// end the input process
+function endInput() {
+  // hide the progress bar
+  progressBar.style.display = 'none';
+
+  // hide quesiotn
+  hideQuestion();
+
+  // hide the buttons
+  prevBtn.style.display = 'none';
+  nextBtn.style.display = 'none';
+
+  // hide the whole form box
+  formBox.style.transition = 'width 0.6s ease-in-out';
+  formBox.style.width = '0';
+
+  setTimeout(showResult, switchTime)
+}
+
+// show the appreciation
+function showResult() {
+  document.body.innerHTML = `
+    <div class="container">
+      <h1 class="logo">Fancy Form</h1>
+      <div class="result">
+        Thanks ${ questions[0].answer } You are registered and will get an emial shortly.
+      </div>
+    </div>
+  `;
+}
+
 // the input is invalid
 function inputFail() {
   // set the error class
@@ -95,6 +126,10 @@ function inputFail() {
 
 // the input is valid
 function inputPass() {
+  // shake the form box
+  setTimeout(shake, shakeTime * 0, 0, 10);
+  setTimeout(shake, shakeTime * 1, 0, 0);
+
   // remove the error class
   formBox.classList.remove('error');
   // set the progress bar color
@@ -111,7 +146,7 @@ function inputPass() {
     hideQuestion();
     getQuestion();
   } else {
-    console.log('finished');
+    endInput();
   }
 }
 
