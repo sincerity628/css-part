@@ -11,7 +11,7 @@ const progressBar = document.getElementById('progress-bar');
 const primaryColor = '#527318';
 const progressColor = '#7ea33c';
 const errorColor = '#8b1b17';
-const errorProgressColor = '#e6433d';
+const errorSecondaryColor = '#e6433d';
 
 // the questions
 const questions = [
@@ -131,11 +131,13 @@ function showResult() {
 function inputFail() {
   // set the error class
   formBox.classList.add('error');
+  // set the prev btn color
+  prevBtn.classList.add('btn-error');
   // set the progress bar color
-  progressBar.style.backgroundColor = errorProgressColor;
+  progressBar.style.backgroundColor = errorSecondaryColor;
   // set the background color into error color
   document.body.style.backgroundColor = errorColor;
-  
+
   // get the form box shake
   for(let i = 0; i < 6; i++) {
     setTimeout(shake, shakeTime * i, ((i % 2) * 2 - 1) * 20, 0);
@@ -151,6 +153,8 @@ function inputPass() {
 
   // remove the error class
   formBox.classList.remove('error');
+  // set the prev btn color
+  prevBtn.classList.remove('btn-error');
   // set the progress bar color
   progressBar.style.backgroundColor = progressColor;
   // set background color to the original

@@ -65,6 +65,12 @@ h1.logo {
       color: $secondary-color;
     }
   }
+
+  #prev-btn.btn-error {
+    &:hover {
+      color: $error-color;
+    }
+  }
 }
 
 .form-box.close {
