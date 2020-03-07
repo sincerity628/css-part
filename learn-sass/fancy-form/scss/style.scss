@@ -139,16 +139,26 @@ h1.logo {
 }
 
 .error {
+  background-color: $error-color;
+
+  #prev-btn:hover {
+    color: $error-secondary-color;
+  }
+
   #next-btn {
     color: $error-color;
 
     &:hover {
-      color: lighten($error-color, 10%);
+      color: $error-secondary-color;
     }
   }
 
   #input-progress {
     border-bottom: 3px solid $error-color;
+  }
+
+  #progress-bar {
+    background-color: $error-secondary-color;
   }
 }
 

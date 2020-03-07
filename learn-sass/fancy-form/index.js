@@ -7,12 +7,6 @@ const inputLabel = document.getElementById('input-label');
 const inputProgress = document.getElementById('input-progress');
 const progressBar = document.getElementById('progress-bar');
 
-// color
-const primaryColor = '#527318';
-const progressColor = '#7ea33c';
-const errorColor = '#8b1b17';
-const errorSecondaryColor = '#e6433d';
-
 // the questions
 const questions = [
   { content: 'Enter your first name' },
@@ -68,6 +62,9 @@ function prevQuestion() {
   if(questionIndex === 0) {
     return;
   }
+  // set the primary color
+  document.body.classList.remove('error');
+
   // move to the previous question
   questionIndex --;
 
@@ -133,13 +130,7 @@ function showResult() {
 // the input is invalid
 function inputFail() {
   // set the error class
-  formBox.classList.add('error');
-  // set the prev btn color
-  prevBtn.classList.add('btn-error');
-  // set the progress bar color
-  progressBar.style.backgroundColor = errorSecondaryColor;
-  // set the background color into error color
-  document.body.style.backgroundColor = errorColor;
+  document.body.classList.add('error');
 
   // get the form box shake
   for(let i = 0; i < 6; i++) {
@@ -154,14 +145,9 @@ function inputPass() {
   setTimeout(shake, shakeTime * 0, 0, 10);
   setTimeout(shake, shakeTime * 1, 0, 0);
 
-  // remove the error class
-  formBox.classList.remove('error');
-  // set the prev btn color
-  prevBtn.classList.remove('btn-error');
-  // set the progress bar color
-  progressBar.style.backgroundColor = progressColor;
-  // set background color to the original
-  document.body.style.backgroundColor = primaryColor;
+  // set the primary color
+  document.body.classList.remove('error');
+
   // store the value in the questions array
   questions[questionIndex].answer = inputField.value;
 
