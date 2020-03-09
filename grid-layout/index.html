@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="../assets/favicon.ico">
+  <title>Grid Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      /* grid-column-gap: 1em;
+      grid-row-gap: 1em; */
+      grid-gap: 1em;
+    }
+
+    .wrapper > div {
+      background-color: #eee;
+      padding: 1em;
+    }
+
+    .wrapper > div:nth-child(odd) {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum excepturi unde explicabo! Consequatur nemo delectus sapiente, eaque voluptatem nulla quod quis dicta qui autem quos excepturi laudantium, unde obcaecati animi suscipit atque ad labore commodi quaerat, recusandae. Accusamus magni, nobis! Enim nemo mollitia facere quos placeat provident nobis numquam. Corporis nisi corrupti illo, magni perferendis debitis voluptate doloremque ab architecto, beatae rerum accusantium blanditiis eveniet eos nihil animi tempore reprehenderit quidem excepturi nobis vel maxime qui minus sit! Voluptas, provident.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non veritatis maxime recusandae eos sunt! Quis tempore eos quas asperiores, perferendis totam laudantium ratione quae aspernatur, molestias dignissimos doloremque ipsam exercitationem.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum excepturi unde explicabo! Consequatur nemo delectus sapiente, eaque voluptatem nulla quod quis dicta qui autem quos excepturi laudantium, unde obcaecati animi suscipit atque ad labore commodi quaerat, recusandae. Accusamus magni, nobis! Enim nemo mollitia facere quos placeat provident nobis numquam. Corporis nisi corrupti illo, magni perferendis debitis voluptate doloremque ab architecto, beatae rerum accusantium blanditiis eveniet eos nihil animi tempore reprehenderit quidem excepturi nobis vel maxime qui minus sit! Voluptas, provident.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non veritatis maxime recusandae eos sunt! Quis tempore eos quas asperiores, perferendis totam laudantium ratione quae aspernatur, molestias dignissimos doloremque ipsam exercitationem.
+    </div>
+  </div>
+</body>
+</html>
