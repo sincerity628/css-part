@@ -4,7 +4,7 @@
 :o: working on
 
 - :x: Animation & Transitions: [detail]()
-- :x: Box Modal: [detail]()
+- Box Modal: [detail](https://github.com/sincerity628/css-part/tree/master/box-modal)
 - :x: Some Tricks: [detail]()
 - Flexbox: [detail](https://github.com/sincerity628/css-part/tree/master/flexbox)
 - Grid Layout: [detail](https://github.com/sincerity628/css-part/tree/master/grid-layout)
